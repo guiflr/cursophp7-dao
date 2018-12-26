@@ -13,13 +13,17 @@ class Sql extends PDO{
 	private function setParams($statement,$parameters = array()){
 		foreach ($parameters as $key => $value) {
 
-			$statement->setParam($key,$value);
+			/*passou a statement que contem a query pronta, os campos do banco(key)
+			e os valores a serem buscados(value)*/
+			$this->setParam($statement,$key,$value);
 		}
 
 	}
 
 	private function setParam($statement,$key,$value){
 
+		/*contem query(statement), os campos do banco e os 
+		valores da clausula como parametro de busca*/
 		$statement->bindParam($key,$value);
 	}
 
@@ -29,6 +33,7 @@ class Sql extends PDO{
 		$this->setParams($stmt,$params);
 		$stmt->execute();
 
+		//passou para o setParams
 		return $stmt;
 	}
 
