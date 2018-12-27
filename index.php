@@ -2,10 +2,20 @@
 
 require_once("config.php");
 
-$sql = new Usuario();
+//$sql = new Usuario();
+//$sql->loadById(3);
+//echo $sql;
 
-$sql->loadById(3);
+//$list = Usuario::getList();
+//echo json_encode($list);
 
-echo $sql;
+//$search = Usuario::search("ro");
+//echo json_encode($search);
+
+$login = new Usuario();
+
+$login->login('Guilherme','123456789');
+
+echo $login;
 
 ?>
