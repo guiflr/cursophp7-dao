@@ -22,11 +22,13 @@ require_once("config.php");
 //$aluno->insert();
 //echo $aluno;
 
+//$usuario = new Usuario();
+//$usuario->loadById(8);
+//$usuario->update("Mister","2256");
+//echo $usuario;
+
 $usuario = new Usuario();
-
-$usuario->loadById(8);
-
-$usuario->update("Mister","2256");
-
+$usuario->loadById(5);
+$usuario->delete();
 echo $usuario;
 ?>
