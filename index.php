@@ -12,10 +12,21 @@ require_once("config.php");
 //$search = Usuario::search("ro");
 //echo json_encode($search);
 
-$login = new Usuario();
+//$login = new Usuario();
+//$login->login('Guilherme','123456789');
+//echo $login;
 
-$login->login('Guilherme','123456789');
+//$aluno = new Usuario();
+//$aluno->setDeslogin("Guigo");
+//$aluno->setDessenha("mentemilionaria");
+//$aluno->insert();
+//echo $aluno;
 
-echo $login;
+$usuario = new Usuario();
 
+$usuario->loadById(8);
+
+$usuario->update("Mister","2256");
+
+echo $usuario;
 ?>
